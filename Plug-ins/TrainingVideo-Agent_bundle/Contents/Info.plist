@@ -7,7 +7,7 @@
 		
        	<key>PlexAgentAttributionText</key>
         <string>
-            Provides an agent capable of parsing Lynda.com, Pluralsight and other training video materials.
+            Provides an agent capable of parsing Lynda, Pluralsight Udemy, Lynda training video materials.
  More info to come.</string>
    
 		<key>PlexFrameworkVersion</key>
