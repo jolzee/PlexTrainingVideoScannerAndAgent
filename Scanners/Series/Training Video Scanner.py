@@ -13,6 +13,8 @@ LOC_WIN = '%LOCALAPPDATA%\Plex Media Server'
 LOC_MAC = '$HOME/Library/Application Support/Plex Media Server'
 LOC_LIN = '$PLEX_HOME/Library/Application Support/Plex Media Server'
 
+#Edit Full path to the plex log
+#Linux default dir  '/var/lib/plexmediaserver/Library/Application Support/Plex Media Server/Logs'
 loggingPath = 'P:\AppData\Plex Media Server\Logs' #os.path.expandvars(LOC_WIN)
 
 # setup logging
@@ -31,7 +33,10 @@ def log(methodName, message, *args):
         
     logMsg = methodName + ' :: ' + logMsg
     print logMsg
-    #logging.debug(logMsg)
+    
+    #In linux this may couse files not to be discoverd. 
+    # Uncommenting May resolve the issue. 
+    logging.debug(logMsg)
 
 
 
