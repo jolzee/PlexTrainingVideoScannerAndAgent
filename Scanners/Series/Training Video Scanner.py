@@ -15,7 +15,8 @@ LOC_LIN = '$PLEX_HOME/Library/Application Support/Plex Media Server'
 
 #Edit Full path to the plex log
 #Linux default dir  '/var/lib/plexmediaserver/Library/Application Support/Plex Media Server/Logs'
-loggingPath = 'P:\AppData\Plex Media Server\Logs' #os.path.expandvars(LOC_WIN)
+loggingPath = '/var/lib/plexmediaserver/Library/Application Support/Plex Media Server/Logs' #os.path.expandvars(LOC_LIN)
+#loggingPath = 'P:\AppData\Plex Media Server\Logs' #os.path.expandvars(LOC_WIN)
 
 # setup logging
 LOG_FORMAT = '%(asctime)s| %(levelname)-8s| %(message)s'
