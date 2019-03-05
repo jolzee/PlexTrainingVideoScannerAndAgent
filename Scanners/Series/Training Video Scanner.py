@@ -11,16 +11,19 @@ YEAR_REGEX = r'^(?P<year>[0-9]{4})$'
 # default PMS data location
 LOC_WIN = '%LOCALAPPDATA%\Plex Media Server'
 LOC_MAC = '$HOME/Library/Application Support/Plex Media Server'
-LOC_LIN = '$PLEX_HOME/Library/Application Support/Plex Media Server'
+LOC_LIN = '/var/lib/plexmediaserver/Library/Application Support/Plex Media Server'
 
 #Edit Full path to the plex log
-#Linux default dir  '/var/lib/plexmediaserver/Library/Application Support/Plex Media Server/Logs'
-loggingPath = '/var/lib/plexmediaserver/Library/Application Support/Plex Media Server/Logs' #os.path.expandvars(LOC_LIN)
-#loggingPath = 'P:\AppData\Plex Media Server\Logs' #os.path.expandvars(LOC_WIN)
+ 
+# There is 2 log files 
+# com.plexapp.system.log when you load meta data
+# Scanner training_video_scanner.log
+
+loggingPath = '/var/lib/plexmediaserver/Library/Application Support/Plex Media Server/Logs/PMS Plugin Logs' #Linux
 
 # setup logging
 LOG_FORMAT = '%(asctime)s| %(levelname)-8s| %(message)s'
-loggingPath = loggingPath +'\\training_video_scanner.log'
+loggingPath = loggingPath +'//training_video_scanner.log'
 logging.basicConfig(filename=loggingPath, format=LOG_FORMAT, level=logging.DEBUG)
 
 def log(methodName, message, *args):
@@ -34,9 +37,7 @@ def log(methodName, message, *args):
         
     logMsg = methodName + ' :: ' + logMsg
     print logMsg
-    
-    #In linux this may couse files not to be discoverd. 
-    # Uncommenting May resolve the issue. 
+    # Log 
     logging.debug(logMsg)
 
 
